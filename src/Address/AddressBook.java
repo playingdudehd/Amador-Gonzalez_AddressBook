@@ -55,11 +55,32 @@ class AddressBook{
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                // Parse the line and create an AddressEntry object
-                // Add the AddressEntry to the addressEntryList
+                // Split the line based on the delimiter (assuming comma here)
+                String[] fields = line.split(",");
+                // Check if the line has the expected number of fields
+                if (fields.length == 8) { // Assuming 8 fields: firstName, lastName, street, city, state, zip, phone, email
+                    // Extract fields
+                    String firstName = fields[0].trim();
+                    String lastName = fields[1].trim();
+                    String street = fields[2].trim();
+                    String city = fields[3].trim();
+                    String state = fields[4].trim();
+                    int zip = Integer.parseInt(fields[5].trim());
+                    String phone = fields[6].trim();
+                    String email = fields[7].trim();
+
+                    // Create an AddressEntry object
+                    AddressEntry addressEntry = new AddressEntry(firstName, lastName, street, city, state, zip, phone, email);
+
+                    // Add the AddressEntry to the addressEntryList
+                    addressEntryList.add(addressEntry);
+                } else {
+                    System.out.println("Skipping invalid line: " + line);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace(); // Handle the exception as needed
+            System.out.println("Current Wroking Directory: " + System.getProperty("user.dir"));
         }
     }
 }
