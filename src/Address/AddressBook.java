@@ -1,56 +1,89 @@
 package Address;
+
 import java.io.BufferedReader;
-import java.util.*;
-import Address.data.AddressEntry;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.*;
 
+import Address.data.AddressEntry;
 
-class AddressBook{
+/**
+ * Represents an address book with various functionalities.
+ */
+class AddressBook {
+    // List to store address entries
     private LinkedList<AddressEntry> addressEntryList;
 
-    public AddressBook(){
+    /**
+     * Constructor to initialize an empty address book.
+     */
+    public AddressBook() {
         this.addressEntryList = new LinkedList<>();
     }
-    public void list(){  //list which iterates through address entry list and for each item call toString & prints it out
-        for (AddressEntry addressEntry : addressEntryList){
+
+    /**
+     * Displays the details of all address entries in the address book.
+     */
+    public void list() {
+        for (AddressEntry addressEntry : addressEntryList) {
             System.out.println(addressEntry.toString());
         }
     }
-    public void add(AddressEntry addressEntry){
+
+    /**
+     * Adds an address entry to the address book.
+     */
+    public void add(AddressEntry addressEntry) {
         addressEntryList.add(addressEntry);
     }
-    public void remove(AddressEntry addressEntry){
+
+    /**
+     * Removes an address entry from the address book.
+     */
+    public void remove(AddressEntry addressEntry) {
         addressEntryList.remove(addressEntry);
     }
-    public AddressEntry find(String lastName){
-        for(AddressEntry entry : addressEntryList){
-            if(entry.getLastName().equalsIgnoreCase(lastName)){
+
+    /**
+     * Finds and returns an address entry based on the last name.
+     */
+    public AddressEntry find(String lastName) {
+        for (AddressEntry entry : addressEntryList) {
+            if (entry.getLastName().equalsIgnoreCase(lastName)) {
                 return entry;
             }
         }
         return null;
     }
-    public void listAlphabeticOrder(){
+
+    /**
+     * Lists address entries in alphabetical order based on last names.
+     */
+    public void listAlphabeticOrder() {
         List<AddressEntry> sortedList = new ArrayList<>(addressEntryList);
         Collections.sort(sortedList, Comparator.comparing(AddressEntry::getLastName));
-
         for (int i = 0; i < sortedList.size(); i++) {
             AddressEntry addressEntry = sortedList.get(i);
             System.out.println("\n" + (i + 1) + ": " + addressEntry.toString());
         }
     }
+
+    /**
+     * Finds address entries by a partial last name and returns a set of matching entries.
+     */
     public Set<AddressEntry> findEntriesByLastName(String partialLastName) {
         Set<AddressEntry> foundEntries = new HashSet<>();
-
         for (AddressEntry entry : addressEntryList) {
-            // Check if the last name starts with the provided partial last name
             if (entry.getLastName().toLowerCase().startsWith(partialLastName.toLowerCase())) {
                 foundEntries.add(entry);
             }
         }
         return foundEntries;
     }
+
+    /**
+     * Loads address entries from a file into the address book.
+     */
     public void loadFromFile(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -80,7 +113,7 @@ class AddressBook{
             }
         } catch (IOException e) {
             e.printStackTrace(); // Handle the exception as needed
-            System.out.println("Current Wroking Directory: " + System.getProperty("user.dir"));
+            System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
         }
     }
 }
