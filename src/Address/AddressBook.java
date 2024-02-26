@@ -1,7 +1,9 @@
 package Address;
-import java.util.LinkedList;
-import java.util.Collections;
+import java.io.BufferedReader;
+import java.util.*;
 import Address.data.AddressEntry;
+import java.io.FileReader;
+import java.io.IOException;
 
 
 class AddressBook{
@@ -30,7 +32,34 @@ class AddressBook{
         return null;
     }
     public void listAlphabeticOrder(){
-        Collections.sort(addressEntryList, (entry1, entry2) -> entry1.getLastName().compareTo(entry2.getLastName()));
-        list();
+        List<AddressEntry> sortedList = new ArrayList<>(addressEntryList);
+        Collections.sort(sortedList, Comparator.comparing(AddressEntry::getLastName));
+
+        for (int i = 0; i < sortedList.size(); i++) {
+            AddressEntry addressEntry = sortedList.get(i);
+            System.out.println("\n" + (i + 1) + ": " + addressEntry.toString());
+        }
+    }
+    public Set<AddressEntry> findEntriesByLastName(String partialLastName) {
+        Set<AddressEntry> foundEntries = new HashSet<>();
+
+        for (AddressEntry entry : addressEntryList) {
+            // Check if the last name starts with the provided partial last name
+            if (entry.getLastName().toLowerCase().startsWith(partialLastName.toLowerCase())) {
+                foundEntries.add(entry);
+            }
+        }
+        return foundEntries;
+    }
+    public void loadFromFile(String filePath) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Parse the line and create an AddressEntry object
+                // Add the AddressEntry to the addressEntryList
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle the exception as needed
+        }
     }
 }

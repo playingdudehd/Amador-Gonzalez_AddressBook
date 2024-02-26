@@ -17,7 +17,7 @@ public class AddressEntry {
         email = "janedoe@hotmail.com";
     }//constructor
 
-    public AddressEntry(String firstName, String lastName, String street, String city, String state,int zip,  String phone, String email) {
+    public AddressEntry(String firstName, String lastName, String street, String city, String state, int zip,  String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
@@ -31,7 +31,7 @@ public class AddressEntry {
 
     public String toString() // unsure what to do with this one?
     {
-        return firstName + " " + lastName + " " + street + " " + city + " " + state + " " + zip + " " + phone + " " + email;
+        return firstName + " " + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip + "\n" + phone + "\n" + email + "\n";
     }
     public String getFirstName(){  //**After this point its just Getters and Setters**
         return firstName;

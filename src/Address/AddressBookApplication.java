@@ -13,13 +13,14 @@ class AddressBookApplication {
         AddressBook ab = new AddressBook();  //instance of AddressBook
         initAddressBookExercise(ab);
         Menu menu = new Menu();
-        menu.displayMenu();
         while(true){
+            menu.displayMenu();
             String choice = menu.getUserChoice();
             switch (choice.toLowerCase()){
                 case "a":
-
-
+                    System.out.print("enter the filename: ");
+                    String filename = menu.getUserChoice();
+                    ab.loadFromFile(filename);
                     break;
                 case "b":
 

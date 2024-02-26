@@ -1,5 +1,10 @@
 package Address;
+import Address.data.AddressEntry;
+
 import java.util.Scanner; //import the Scanner Class
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Scanner;
 public class Menu {
     private static Scanner scanner = new Scanner(System.in);
     public static void closeScanner(){
@@ -52,5 +57,18 @@ public class Menu {
         System.out.print("Email: ");
         return scanner.nextLine();
     }
-
+    public Set<AddressEntry> prompt_FindByLastName(AddressBook addressBook) {
+        System.out.print("Enter the beginning of the last name: ");
+        String partialLastName = scanner.nextLine();
+        Set<AddressEntry> foundEntries = addressBook.findEntriesByLastName(partialLastName);
+        if (foundEntries.isEmpty()) {
+            System.out.println("No entries found.");
+        } else {
+            System.out.println("Found entries:");
+            for (AddressEntry entry : foundEntries) {
+                System.out.println(entry.toString());
+            }
+        }
+        return foundEntries;
+    }
 }
