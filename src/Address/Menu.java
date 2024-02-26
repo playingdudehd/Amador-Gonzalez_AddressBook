@@ -1,10 +1,7 @@
 package Address;
 import Address.data.AddressEntry;
-
 import java.util.Scanner; //import the Scanner Class
-import java.util.HashSet;
 import java.util.Set;
-import java.util.Scanner;
 public class Menu {
     private static Scanner scanner = new Scanner(System.in);
     public static void closeScanner(){
