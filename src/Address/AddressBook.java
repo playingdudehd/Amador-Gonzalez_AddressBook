@@ -10,7 +10,7 @@ import Address.data.AddressEntry;
 /**
  * Represents an address book with various functionalities.
  */
-class AddressBook {
+public class AddressBook {
     // List to store address entries
     private LinkedList<AddressEntry> addressEntryList;
 
@@ -32,6 +32,8 @@ class AddressBook {
 
     /**
      * Adds an address entry to the address book.
+     *
+     * @param addressEntry The AddressEntry object to be added.
      */
     public void add(AddressEntry addressEntry) {
         addressEntryList.add(addressEntry);
@@ -39,6 +41,8 @@ class AddressBook {
 
     /**
      * Removes an address entry from the address book.
+     *
+     * @param addressEntry The AddressEntry object to be removed.
      */
     public void remove(AddressEntry addressEntry) {
         addressEntryList.remove(addressEntry);
@@ -46,6 +50,9 @@ class AddressBook {
 
     /**
      * Finds and returns an address entry based on the last name.
+     *
+     * @param lastName The last name to search for.
+     * @return The found AddressEntry, or null if not found.
      */
     public AddressEntry find(String lastName) {
         for (AddressEntry entry : addressEntryList) {
@@ -70,6 +77,9 @@ class AddressBook {
 
     /**
      * Finds address entries by a partial last name and returns a set of matching entries.
+     *
+     * @param partialLastName The partial last name to search for.
+     * @return A set of found AddressEntry instances.
      */
     public Set<AddressEntry> findEntriesByLastName(String partialLastName) {
         Set<AddressEntry> foundEntries = new HashSet<>();
@@ -83,6 +93,8 @@ class AddressBook {
 
     /**
      * Loads address entries from a file into the address book.
+     *
+     * @param filePath The path of the file to load entries from.
      */
     public void loadFromFile(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {

@@ -4,8 +4,12 @@ import Address.data.AddressEntry;
 
 /**
  * Represents the main application class for the address book.
+ * @author Misael Amador Gonzalez
  */
 class AddressBookApplication {
+    /**
+     * @param args Command-line arguments (not used in this application).
+     */
     public static void main(String[] args) {
         AddressBook ab = new AddressBook();
         initAddressBookExercise(ab);
@@ -55,6 +59,8 @@ class AddressBookApplication {
 
     /**
      * Adds a new address entry to the address book.
+     * @param ab The AddressBook instance to add the entry to.
+     * @param menu The Menu instance for user interaction.
      */
     private static void addEntry(AddressBook ab, Menu menu){
         AddressEntry newEntry = new AddressEntry(
@@ -73,6 +79,8 @@ class AddressBookApplication {
 
     /**
      * Removes an address entry from the address book.
+     *@param ab The AddressBook instance to remove the entry from.
+     *@param menu The Menu instance for user interaction.
      */
     private static void removeEntry(AddressBook ab, Menu menu){
         String lastNameToRemove = menu.prompt_LastName();
@@ -88,6 +96,8 @@ class AddressBookApplication {
 
     /**
      * Finds an address entry by last name and displays it.
+     *@param ab The AddressBook instance to search for the entry.
+     *@param menu The Menu instance for user interaction.
      */
     private static void findEntry(AddressBook ab, Menu menu){
         String lastNametoFind = menu.prompt_LastName();
@@ -102,6 +112,7 @@ class AddressBookApplication {
 
     /**
      * Lists all address entries in alphabetic order by last name.
+     *@param ab The AddressBook instance to list entries from.
      */
     private static void listEntries(AddressBook ab){
         ab.listAlphabeticOrder();

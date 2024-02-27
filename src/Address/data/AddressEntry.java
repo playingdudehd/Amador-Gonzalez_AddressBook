@@ -29,6 +29,10 @@ public class AddressEntry {
     }
 
     // toString method to create a formatted string representation of the object
+
+    /**
+     * @return formatted string representation
+     */
     public String toString() {
         return firstName + " " + lastName + "\n" + street + "\n" + city + ", " + state + " " + zip + "\n" + phone + "\n" + email + "\n";
     }
