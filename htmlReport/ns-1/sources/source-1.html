@@ -1,0 +1,203 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > AddressEntry</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">Address.data</a>
+</div>
+
+<h1>Coverage Summary for Class: AddressEntry (Address.data)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddressEntry</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/35)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package Address.data;
+&nbsp;public class AddressEntry {
+&nbsp;    // Private instance variables to store personal information
+&nbsp;    private String firstName, lastName, street, city, state, phone, email;
+&nbsp;    private int zip;  // Zip code
+&nbsp;
+&nbsp;    // Default constructor setting default values
+<b class="nc">&nbsp;    public AddressEntry(){</b>
+<b class="nc">&nbsp;        firstName = &quot;Jane&quot;;</b>
+<b class="nc">&nbsp;        lastName = &quot;Doe&quot;;</b>
+<b class="nc">&nbsp;        street = &quot;123 street&quot;;</b>
+<b class="nc">&nbsp;        city = &quot;Hayward&quot;;</b>
+<b class="nc">&nbsp;        state = &quot;CA&quot;;</b>
+<b class="nc">&nbsp;        zip = 94542;</b>
+<b class="nc">&nbsp;        phone = &quot;1234567890&quot;;</b>
+<b class="nc">&nbsp;        email = &quot;janedoe@hotmail.com&quot;;</b>
+&nbsp;    }//constructor
+&nbsp;
+&nbsp;    // Parameterized constructor to set values based on provided arguments
+<b class="nc">&nbsp;    public AddressEntry(String firstName, String lastName, String street, String city, String state, int zip,  String phone, String email) {</b>
+<b class="nc">&nbsp;        this.firstName = firstName;</b>
+<b class="nc">&nbsp;        this.lastName = lastName;</b>
+<b class="nc">&nbsp;        this.street = street;</b>
+<b class="nc">&nbsp;        this.city = city;</b>
+<b class="nc">&nbsp;        this.state = state;</b>
+<b class="nc">&nbsp;        this.zip = zip;</b>
+<b class="nc">&nbsp;        this.phone = phone;</b>
+<b class="nc">&nbsp;        this.email = email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // toString method to create a formatted string representation of the object
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        return firstName + &quot; &quot; + lastName + &quot;\n&quot; + street + &quot;\n&quot; + city + &quot;, &quot; + state + &quot; &quot; + zip + &quot;\n&quot; + phone + &quot;\n&quot; + email + &quot;\n&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for firstName
+&nbsp;    public String getFirstName(){
+<b class="nc">&nbsp;        return firstName;</b>
+&nbsp;    }
+&nbsp;    public void setFirstName(String newFirstName){
+<b class="nc">&nbsp;        this.firstName = newFirstName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for lastName
+&nbsp;    public String getLastName(){
+<b class="nc">&nbsp;        return lastName;</b>
+&nbsp;    }
+&nbsp;    public void setLastName(String newLastName){
+<b class="nc">&nbsp;        this.lastName = newLastName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for street
+&nbsp;    public String getStreet(){
+<b class="nc">&nbsp;        return street;</b>
+&nbsp;    }
+&nbsp;    public void setStreet(String newStreet){
+<b class="nc">&nbsp;        this.street = newStreet;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for city
+&nbsp;    public String getCity(){
+<b class="nc">&nbsp;        return city;</b>
+&nbsp;    }
+&nbsp;    public void setCity(String newCity){
+<b class="nc">&nbsp;        this.city = newCity;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for state
+&nbsp;    public String getState(){
+<b class="nc">&nbsp;        return state;</b>
+&nbsp;    }
+&nbsp;    public void setState(String newState){
+<b class="nc">&nbsp;        this.state = newState;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for zip
+&nbsp;    public int getZip(){
+<b class="nc">&nbsp;        return zip;</b>
+&nbsp;    }
+&nbsp;    public void setZip(int newZip){
+<b class="nc">&nbsp;        this.zip = newZip;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for phone
+&nbsp;    public String getPhone(){
+<b class="nc">&nbsp;        return phone;</b>
+&nbsp;    }
+&nbsp;    public void setPhone(String newPhone){
+<b class="nc">&nbsp;        this.phone = newPhone;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Getter and Setter methods for email
+&nbsp;    public String getEmail(){
+<b class="nc">&nbsp;        return email;</b>
+&nbsp;    }
+&nbsp;    public void setEmail(String newEmail){
+<b class="nc">&nbsp;        this.email = newEmail;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-26 21:47</div>
+</div>
+</body>
+</html>
