@@ -50,7 +50,7 @@ class AddressBookApplication {
         AddressEntry part2 = new AddressEntry();
         ab.add(part1);
         ab.add(part2);
-        ab.list();
+        //ab.list();
     }
 
     /**

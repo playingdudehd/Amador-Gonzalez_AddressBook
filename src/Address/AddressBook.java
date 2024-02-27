@@ -112,7 +112,7 @@ class AddressBook {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace(); // Handle the exception as needed
+            e.printStackTrace(); // Handles the exception as needed
             System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
         }
     }
